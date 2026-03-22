@@ -1,0 +1,31 @@
+* {
+    box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+    min-height: 100dvh;
+}
+
+:root {
+    --bg: #eff6ff;
+    --bg-2: #f8fafc;
+    --fg: #0f172a;
+}
+
+body {
+    margin: 0;
+    font-family: system-ui, Segoe UI, Roboto, Inter, Arial, sans-serif;
+    color: var(--fg);
+    background:
+        radial-gradient(1200px 800px at 10% -10%, rgba(37, 99, 235, 0.08), transparent 60%),
+        radial-gradient(1000px 700px at 100% 10%, rgba(2, 132, 199, 0.06), transparent 55%),
+        linear-gradient(180deg, var(--bg), var(--bg-2));
+}
+
+.app {
+    min-height: 100dvh;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+}

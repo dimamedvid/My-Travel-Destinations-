@@ -1,0 +1,26 @@
+.city-list-section {
+    display: grid;
+    gap: 20px;
+}
+
+.city-list-section__heading {
+    display: grid;
+    gap: 8px;
+}
+
+.city-list-section__title {
+    margin: 0;
+    font-size: 28px;
+    color: #0f172a;
+}
+
+.city-list-section__text {
+    margin: 0;
+    color: #64748b;
+    line-height: 1.5;
+}
+
+.city-list {
+    display: grid;
+    gap: 18px;
+}

@@ -1,0 +1,12 @@
+.footer {
+    background: #f8fafc;
+    padding: 14px 20px;
+    border-top: 1px solid rgba(2, 8, 23, 0.06);
+    display: flex;
+    justify-content: center;
+    color: #64748b;
+}
+
+.footer small {
+    font-size: 14px;
+}
