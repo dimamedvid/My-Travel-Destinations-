@@ -39,7 +39,7 @@ export default function CitySearch() {
         </select>
       </div>
 
-      <button className="city-search__button" type="button">
+      <button className="city-search__button" type="button">  
         Find places
       </button>
     </section>

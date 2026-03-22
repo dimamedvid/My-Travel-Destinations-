@@ -1,12 +1,10 @@
 import './Header.css';
 
-export default function Header() {
+export default function Header({ title, subtitle }) {
   return (
     <header className="header">
-      <h1 className="header__title">My Travel Destinations</h1>
-      <button className="header__add" type="button" aria-label="Explore destinations">
-        Explore Now
-      </button>
+      <h1 className="header__title">{title}</h1>
+      <p className="header__subtitle">{subtitle}</p>
     </header>
   );
 }
