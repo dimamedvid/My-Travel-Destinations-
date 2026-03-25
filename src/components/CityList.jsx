@@ -11,15 +11,21 @@ export default function CityList({ destinations, onToggleVisited }) {
         </p>
       </div>
 
-      <div className="city-list">
-        {destinations.map((destination) => (
-          <CityItem
-            key={destination.id}
-            destination={destination}
-            onToggleVisited={onToggleVisited}
-          />
-        ))}
-      </div>
+      {destinations.length === 0 ? (
+        <p className="city-list-section__empty">
+          No destinations found for this filter.
+        </p>
+      ) : (
+        <div className="city-list">
+          {destinations.map((destination) => (
+            <CityItem
+              key={destination.id}
+              destination={destination}
+              onToggleVisited={onToggleVisited}
+            />
+          ))}
+        </div>
+      )}
     </section>
   );
 }

@@ -24,3 +24,14 @@
     display: grid;
     gap: 18px;
 }
+
+.city-list-section__empty {
+    margin: 0;
+    padding: 20px;
+    border: 1px dashed #cbd5e1;
+    border-radius: 12px;
+    background: #f8fafc;
+    color: #64748b;
+    text-align: center;
+    font-weight: 600;
+}

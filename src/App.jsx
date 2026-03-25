@@ -55,6 +55,8 @@ export default function App() {
     },
   ]);
 
+  const [filter, setFilter] = useState('all');
+
   function toggleVisited(id) {
     setDestinations((prevDestinations) =>
       prevDestinations.map((destination) =>
@@ -67,6 +69,12 @@ export default function App() {
 
   const visitedCount = destinations.filter((destination) => destination.visited).length;
 
+  const filteredDestinations = destinations.filter((destination) => {
+    if (filter === 'visited') return destination.visited;
+    if (filter === 'planned') return !destination.visited;
+    return true;
+  });
+
   return (
     <div className="app">
       <Header
@@ -75,7 +83,12 @@ export default function App() {
         visitedCount={visitedCount}
         totalCount={destinations.length}
       />
-      <Main destinations={destinations} onToggleVisited={toggleVisited} />
+      <Main
+        destinations={filteredDestinations}
+        filter={filter}
+        onFilterChange={setFilter}
+        onToggleVisited={toggleVisited}
+      />
       <Footer />
     </div>
   );
