@@ -1,10 +1,10 @@
 import './CityItem.css';
 
-export default function CityItem({ destination }) {
-  const { name, country, image, description, rating } = destination;
+export default function CityItem({ destination, onToggleVisited }) {
+  const { id, name, country, image, description, rating, visited } = destination;
 
   return (
-    <article className="city-card">
+    <article className={`city-card ${visited ? 'city-card--visited' : ''}`}>
       <img className="city-card__image" src={image} alt={name} />
 
       <div className="city-card__content">
@@ -14,15 +14,24 @@ export default function CityItem({ destination }) {
             <p className="city-card__country">{country}</p>
           </div>
 
-          <span className="city-card__rating" aria-label={`Visitor rating ${rating}`}>
-            ⭐ {rating}
-          </span>
+          <div className="city-card__meta">
+            <span className="city-card__rating" aria-label={`Visitor rating ${rating}`}>
+              ⭐ {rating}
+            </span>
+            <span className={`city-card__status ${visited ? 'city-card__status--visited' : ''}`}>
+              {visited ? 'Visited' : 'Planned'}
+            </span>
+          </div>
         </div>
 
         <p className="city-card__description">{description}</p>
 
-        <button className="city-card__button" type="button">
-          View Destination
+        <button
+          className="city-card__button"
+          type="button"
+          onClick={() => onToggleVisited(id)}
+        >
+          {visited ? 'Mark as Planned' : 'Mark as Visited'}
         </button>
       </div>
     </article>

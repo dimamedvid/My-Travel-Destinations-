@@ -18,6 +18,17 @@
     letter-spacing: 0.3px;
 }
 
+.header__subtitle {
+    margin: 6px 0 0;
+    color: #64748b;
+}
+
+.header__counter {
+    margin: 8px 0 0;
+    color: #2563eb;
+    font-weight: 600;
+}
+
 .header__add {
     padding: 10px 14px;
     border: 1px solid rgba(96, 165, 250, 0.45);

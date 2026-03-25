@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import Header from './components/Header.jsx';
 import Main from './components/Main.jsx';
 import Footer from './components/Footer.jsx';
@@ -7,7 +8,7 @@ export default function App() {
   const appTitle = 'My Travel Destinations';
   const appSubtitle = 'Explore popular places around the world';
 
-  const destinations = [
+  const [destinations, setDestinations] = useState([
     {
       id: 1,
       name: 'Paris',
@@ -17,6 +18,7 @@ export default function App() {
       description:
         'Paris is famous for its romantic atmosphere, elegant architecture, world-class museums, and unforgettable city walks.',
       rating: 4.9,
+      visited: false,
     },
     {
       id: 2,
@@ -27,6 +29,7 @@ export default function App() {
       description:
         'Tokyo combines modern technology, traditional culture, bright city lights, and an incredible variety of food and entertainment.',
       rating: 4.8,
+      visited: true,
     },
     {
       id: 3,
@@ -37,6 +40,7 @@ export default function App() {
       description:
         'Rome offers ancient landmarks, beautiful squares, delicious cuisine, and a rich historical atmosphere in every district.',
       rating: 4.7,
+      visited: false,
     },
     {
       id: 4,
@@ -47,13 +51,31 @@ export default function App() {
       description:
         'Barcelona attracts visitors with colorful architecture, Mediterranean beaches, lively streets, and unique local culture.',
       rating: 4.8,
+      visited: true,
     },
-  ];
+  ]);
+
+  function toggleVisited(id) {
+    setDestinations((prevDestinations) =>
+      prevDestinations.map((destination) =>
+        destination.id === id
+          ? { ...destination, visited: !destination.visited }
+          : destination
+      )
+    );
+  }
+
+  const visitedCount = destinations.filter((destination) => destination.visited).length;
 
   return (
     <div className="app">
-      <Header title={appTitle} subtitle={appSubtitle} />
-      <Main destinations={destinations} />
+      <Header
+        title={appTitle}
+        subtitle={appSubtitle}
+        visitedCount={visitedCount}
+        totalCount={destinations.length}
+      />
+      <Main destinations={destinations} onToggleVisited={toggleVisited} />
       <Footer />
     </div>
   );

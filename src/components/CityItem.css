@@ -51,6 +51,32 @@
     font-weight: 600;
 }
 
+.city-card--visited {
+    border-color: #86efac;
+    box-shadow: 0 10px 26px rgba(34, 197, 94, 0.12);
+}
+
+.city-card__meta {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 8px;
+}
+
+.city-card__status {
+    padding: 6px 10px;
+    border-radius: 999px;
+    background: #fef3c7;
+    color: #92400e;
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.city-card__status--visited {
+    background: #dcfce7;
+    color: #166534;
+}
+
 .city-card__rating {
     flex-shrink: 0;
     padding: 8px 12px;
