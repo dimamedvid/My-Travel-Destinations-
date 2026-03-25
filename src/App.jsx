@@ -67,6 +67,10 @@ export default function App() {
     );
   }
 
+  function addDestination(newDestination) {
+    setDestinations((prevDestinations) => [...prevDestinations, newDestination]);
+  }
+
   const visitedCount = destinations.filter((destination) => destination.visited).length;
 
   const filteredDestinations = destinations.filter((destination) => {
@@ -88,6 +92,7 @@ export default function App() {
         filter={filter}
         onFilterChange={setFilter}
         onToggleVisited={toggleVisited}
+        onAddDestination={addDestination}
       />
       <Footer />
     </div>

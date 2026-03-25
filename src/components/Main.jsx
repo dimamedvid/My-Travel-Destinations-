@@ -1,4 +1,5 @@
 import CitySearch from './CitySearch.jsx';
+import DestinationForm from './DestinationForm.jsx';
 import CityList from './CityList.jsx';
 import './Main.css';
 
@@ -7,11 +8,13 @@ export default function Main({
   filter,
   onFilterChange,
   onToggleVisited,
+  onAddDestination,
 }) {
   return (
     <main className="main">
       <section className="panel">
         <CitySearch />
+        <DestinationForm onAddDestination={onAddDestination} />
 
         <div className="filter-bar">
           <button
