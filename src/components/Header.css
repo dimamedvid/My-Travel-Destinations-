@@ -53,3 +53,31 @@
     outline: none;
     box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.25);
 }
+
+.nav {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.nav__link {
+    padding: 10px 14px;
+    border: 1px solid rgba(96, 165, 250, 0.45);
+    background: linear-gradient(180deg, rgba(96, 165, 250, 0.15), rgba(96, 165, 250, 0.05));
+    color: #0f172a;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: 0.2s ease;
+}
+
+.nav__link:hover {
+    border-color: #2563eb;
+}
+
+.nav__link.active {
+    background: #2563eb;
+    color: #ffffff;
+    border-color: #2563eb;
+}

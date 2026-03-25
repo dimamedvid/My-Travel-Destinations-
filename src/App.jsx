@@ -1,7 +1,12 @@
 import { useState, useEffect } from 'react';
+import { Routes, Route } from 'react-router';
 import Header from './components/Header.jsx';
-import Main from './components/Main.jsx';
 import Footer from './components/Footer.jsx';
+import HomePage from './pages/HomePage.jsx';
+import DestinationsPage from './pages/DestinationsPage.jsx';
+import AboutPage from './pages/AboutPage.jsx';
+import DestinationDetailsPage from './pages/DestinationDetailsPage.jsx';
+import NotFoundPage from './pages/NotFoundPage.jsx';
 import './App.css';
 
 export default function App() {
@@ -99,13 +104,32 @@ export default function App() {
         visitedCount={visitedCount}
         totalCount={destinations.length}
       />
-      <Main
-        destinations={filteredDestinations}
-        filter={filter}
-        onFilterChange={setFilter}
-        onToggleVisited={toggleVisited}
-        onAddDestination={addDestination}
-      />
+
+      <Routes>
+        <Route
+          path="/"
+          element={<HomePage title={appTitle} subtitle={appSubtitle} />}
+        />
+        <Route
+          path="/destinations"
+          element={
+            <DestinationsPage
+              destinations={filteredDestinations}
+              filter={filter}
+              onFilterChange={setFilter}
+              onToggleVisited={toggleVisited}
+              onAddDestination={addDestination}
+            />
+          }
+        />
+        <Route
+          path="/destination/:id"
+          element={<DestinationDetailsPage destinations={destinations} />}
+        />
+        <Route path="/about" element={<AboutPage />} />
+        <Route path="*" element={<NotFoundPage />} />
+      </Routes>
+
       <Footer />
     </div>
   );

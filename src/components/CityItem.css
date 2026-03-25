@@ -114,6 +114,27 @@
     transform: translateY(1px);
 }
 
+.city-card__actions {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.city-card__link {
+    padding: 10px 16px;
+    border: 1px solid #93c5fd;
+    border-radius: 10px;
+    background: #eff6ff;
+    color: #1d4ed8;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.city-card__link:hover {
+    filter: brightness(0.98);
+}
+
 @media (max-width: 700px) {
     .city-card {
         grid-template-columns: 1fr;

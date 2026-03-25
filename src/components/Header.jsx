@@ -1,3 +1,4 @@
+import { NavLink } from 'react-router';
 import './Header.css';
 
 export default function Header({ title, subtitle, visitedCount, totalCount }) {
@@ -11,9 +12,17 @@ export default function Header({ title, subtitle, visitedCount, totalCount }) {
         </p>
       </div>
 
-      <button className="header__add" type="button" aria-label="Explore destinations">
-        Explore Now
-      </button>
+      <nav className="nav">
+        <NavLink to="/" end className="nav__link">
+          Home
+        </NavLink>
+        <NavLink to="/destinations" className="nav__link">
+          Destinations
+        </NavLink>
+        <NavLink to="/about" className="nav__link">
+          About
+        </NavLink>
+      </nav>
     </header>
   );
 }

@@ -1,3 +1,4 @@
+import { Link } from 'react-router';
 import './CityItem.css';
 
 export default function CityItem({ destination, onToggleVisited }) {
@@ -26,13 +27,19 @@ export default function CityItem({ destination, onToggleVisited }) {
 
         <p className="city-card__description">{description}</p>
 
-        <button
-          className="city-card__button"
-          type="button"
-          onClick={() => onToggleVisited(id)}
-        >
-          {visited ? 'Mark as Planned' : 'Mark as Visited'}
-        </button>
+        <div className="city-card__actions">
+          <button
+            className="city-card__button"
+            type="button"
+            onClick={() => onToggleVisited(id)}
+          >
+            {visited ? 'Mark as Planned' : 'Mark as Visited'}
+          </button>
+
+          <Link className="city-card__link" to={`/destination/${id}`}>
+            Details
+          </Link>
+        </div>
       </div>
     </article>
   );
