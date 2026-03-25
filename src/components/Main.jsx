@@ -1,6 +1,7 @@
 import CitySearch from './CitySearch.jsx';
 import DestinationForm from './DestinationForm.jsx';
 import CityList from './CityList.jsx';
+import TravelersList from './TravelersList.jsx';
 import './Main.css';
 
 export default function Main({
@@ -46,6 +47,8 @@ export default function Main({
           destinations={destinations}
           onToggleVisited={onToggleVisited}
         />
+
+        <TravelersList />
       </section>
     </main>
   );
