@@ -1,10 +1,10 @@
 .footer {
-    background: var(--footer-bg);
+    background: var(--color-surface);
     padding: 14px 20px;
-    border-top: 1px solid var(--panel-border);
+    border-top: 1px solid var(--color-border);
     display: flex;
     justify-content: center;
-    color: var(--text-soft);
+    color: var(--color-text-muted);
 }
 
 .footer small {

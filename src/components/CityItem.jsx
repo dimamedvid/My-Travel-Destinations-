@@ -1,5 +1,6 @@
 import { Link } from 'react-router';
 import { useDestinations } from '../context/useDestinations.jsx';
+import { Button, Card } from './ui/index.js';
 import './CityItem.css';
 
 export default function CityItem({ destination }) {
@@ -8,42 +9,48 @@ export default function CityItem({ destination }) {
   const { id, name, country, image, description, rating, visited } = destination;
 
   return (
-    <article className={`city-card ${visited ? 'city-card--visited' : ''}`}>
-      <img className="city-card__image" src={image} alt={name} />
+    <Card hoverable className={`city-card ${visited ? 'city-card--visited' : ''}`}>
+      <div className="city-card__layout">
+        <img className="city-card__image" src={image} alt={name} />
 
-      <div className="city-card__content">
-        <div className="city-card__top">
-          <div>
-            <h3 className="city-card__title">{name}</h3>
-            <p className="city-card__country">{country}</p>
-          </div>
+        <div className="city-card__content">
+          <Card.Header className="city-card__header">
+            <div>
+              <Card.Title>{name}</Card.Title>
+              <p className="city-card__country">{country}</p>
+            </div>
 
-          <div className="city-card__meta">
-            <span className="city-card__rating" aria-label={`Visitor rating ${rating}`}>
-              ⭐ {rating}
-            </span>
-            <span className={`city-card__status ${visited ? 'city-card__status--visited' : ''}`}>
-              {visited ? 'Visited' : 'Planned'}
-            </span>
-          </div>
-        </div>
+            <div className="city-card__meta">
+              <span className="city-card__rating" aria-label={`Visitor rating ${rating}`}>
+                ⭐ {rating}
+              </span>
+              <span className={`city-card__status ${visited ? 'city-card__status--visited' : ''}`}>
+                {visited ? 'Visited' : 'Planned'}
+              </span>
+            </div>
+          </Card.Header>
 
-        <p className="city-card__description">{description}</p>
+          <Card.Body>
+            <p className="city-card__description">{description}</p>
+          </Card.Body>
 
-        <div className="city-card__actions">
-          <button
-            className="city-card__button"
-            type="button"
-            onClick={() => toggleVisited(id)}
-          >
-            {visited ? 'Mark as Planned' : 'Mark as Visited'}
-          </button>
+          <Card.Footer className="city-card__actions">
+            <Button
+              variant="primary"
+              size="sm"
+              onClick={() => toggleVisited(id)}
+            >
+              {visited ? 'Mark as Planned' : 'Mark as Visited'}
+            </Button>
 
-          <Link className="city-card__link" to={`/destination/${id}`}>
-            Details
-          </Link>
+            <Link to={`/destination/${id}`} className="city-card__details-link">
+              <Button variant="secondary" size="sm">
+                Details
+              </Button>
+            </Link>
+          </Card.Footer>
         </div>
       </div>
-    </article>
+    </Card>
   );
 }

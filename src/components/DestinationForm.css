@@ -6,44 +6,6 @@
     align-items: end;
 }
 
-.destination-form__group {
-    display: grid;
-    gap: 8px;
-}
-
-.destination-form__label {
-    font-size: 14px;
-    font-weight: 600;
-    color: var(--fg);
-}
-
-.destination-form__input {
-    width: 100%;
-    padding: 12px 14px;
-    border: 1px solid var(--input-border);
-    border-radius: 10px;
-    background: var(--input-bg);
-    color: var(--fg);
-    font: inherit;
-    outline: none;
-    transition: border-color 0.2s ease, box-shadow 0.2s ease;
-}
-
-.destination-form__input:focus {
-    border-color: var(--accent);
-    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
-}
-
-.destination-form__button {
-    padding: 12px 18px;
-    border: none;
-    border-radius: 10px;
-    background: var(--accent);
-    color: var(--button-text);
-    font-weight: 700;
-    cursor: pointer;
-}
-
 @media (max-width: 768px) {
     .destination-form {
         grid-template-columns: 1fr;

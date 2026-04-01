@@ -1,20 +1,6 @@
-* {
-    box-sizing: border-box;
-}
-
-html,
-body,
-#root {
-    min-height: 100dvh;
-}
-
-body {
-    font-family: system-ui, Segoe UI, Roboto, Inter, Arial, sans-serif;
-}
-
 .app {
     min-height: 100dvh;
     display: grid;
     grid-template-rows: auto 1fr auto;
-    color: var(--fg);
+    color: var(--color-text);
 }

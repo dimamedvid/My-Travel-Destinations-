@@ -1,5 +1,6 @@
 import { NavLink } from 'react-router';
 import { useTheme } from '../context/useTheme.jsx';
+import { Button } from './ui/index.js';
 import './Header.css';
 
 export default function Header({ title, subtitle, visitedCount, totalCount }) {
@@ -26,9 +27,9 @@ export default function Header({ title, subtitle, visitedCount, totalCount }) {
           About
         </NavLink>
 
-        <button className="nav__theme-button" type="button" onClick={toggleTheme}>
+        <Button variant="secondary" size="sm" onClick={toggleTheme}>
           {theme === 'light' ? '🌙 Dark theme' : '☀️ Light theme'}
-        </button>
+        </Button>
       </nav>
     </header>
   );
