@@ -5,12 +5,12 @@
 
 .page-block__title {
     margin: 0;
-    color: #0f172a;
+    color: var(--fg);
 }
 
 .page-block__text {
     margin: 0;
-    color: #475569;
+    color: var(--text-soft);
     line-height: 1.6;
 }
 
@@ -19,9 +19,9 @@
     width: fit-content;
     padding: 10px 16px;
     border-radius: 10px;
-    background: #eff6ff;
-    border: 1px solid #93c5fd;
-    color: #1d4ed8;
+    background: var(--accent-soft);
+    border: 1px solid var(--accent-border);
+    color: var(--accent);
     text-decoration: none;
     font-weight: 700;
 }

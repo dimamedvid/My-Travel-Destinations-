@@ -14,23 +14,23 @@
 .destination-form__label {
     font-size: 14px;
     font-weight: 600;
-    color: #334155;
+    color: var(--fg);
 }
 
 .destination-form__input {
     width: 100%;
     padding: 12px 14px;
-    border: 1px solid #cbd5e1;
+    border: 1px solid var(--input-border);
     border-radius: 10px;
-    background: #ffffff;
-    color: #0f172a;
+    background: var(--input-bg);
+    color: var(--fg);
     font: inherit;
     outline: none;
     transition: border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
 .destination-form__input:focus {
-    border-color: #2563eb;
+    border-color: var(--accent);
     box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
 }
 
@@ -38,8 +38,8 @@
     padding: 12px 18px;
     border: none;
     border-radius: 10px;
-    background: #2563eb;
-    color: #ffffff;
+    background: var(--accent);
+    color: var(--button-text);
     font-weight: 700;
     cursor: pointer;
 }

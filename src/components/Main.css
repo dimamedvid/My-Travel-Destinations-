@@ -5,11 +5,11 @@
 .panel {
     max-width: 1100px;
     margin: 0 auto;
-    background: linear-gradient(180deg, rgba(255, 255, 255, 0.96), rgba(255, 255, 255, 0.93));
-    border: 1px solid #e5e7eb;
+    background: linear-gradient(180deg, var(--panel-bg), var(--panel-bg-2));
+    border: 1px solid var(--panel-border);
     border-radius: 18px;
     padding: 24px;
-    box-shadow: 0 10px 30px rgba(2, 8, 23, 0.08);
+    box-shadow: 0 10px 30px var(--shadow);
 }
 
 .filter-bar {
@@ -21,23 +21,23 @@
 
 .filter-bar__button {
     padding: 10px 16px;
-    border: 1px solid #cbd5e1;
+    border: 1px solid var(--input-border);
     border-radius: 10px;
-    background: #ffffff;
-    color: #0f172a;
+    background: var(--input-bg);
+    color: var(--fg);
     font-weight: 600;
     cursor: pointer;
     transition: 0.2s ease;
 }
 
 .filter-bar__button:hover {
-    border-color: #2563eb;
+    border-color: var(--accent);
 }
 
 .filter-bar__button--active {
-    background: #2563eb;
-    border-color: #2563eb;
-    color: #ffffff;
+    background: var(--accent);
+    border-color: var(--accent);
+    color: var(--button-text);
 }
 
 @media (max-width: 640px) {

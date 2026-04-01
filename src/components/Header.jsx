@@ -1,7 +1,10 @@
 import { NavLink } from 'react-router';
+import { useTheme } from '../context/useTheme.jsx';
 import './Header.css';
 
 export default function Header({ title, subtitle, visitedCount, totalCount }) {
+  const { theme, toggleTheme } = useTheme();
+
   return (
     <header className="header">
       <div>
@@ -22,6 +25,10 @@ export default function Header({ title, subtitle, visitedCount, totalCount }) {
         <NavLink to="/about" className="nav__link">
           About
         </NavLink>
+
+        <button className="nav__theme-button" type="button" onClick={toggleTheme}>
+          {theme === 'light' ? '🌙 Dark theme' : '☀️ Light theme'}
+        </button>
       </nav>
     </header>
   );

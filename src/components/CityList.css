@@ -11,12 +11,12 @@
 .city-list-section__title {
     margin: 0;
     font-size: 28px;
-    color: #0f172a;
+    color: var(--fg);
 }
 
 .city-list-section__text {
     margin: 0;
-    color: #64748b;
+    color: var(--text-soft);
     line-height: 1.5;
 }
 
@@ -28,10 +28,10 @@
 .city-list-section__empty {
     margin: 0;
     padding: 20px;
-    border: 1px dashed #cbd5e1;
+    border: 1px dashed var(--input-border);
     border-radius: 12px;
-    background: #f8fafc;
-    color: #64748b;
+    background: var(--muted-bg);
+    color: var(--text-soft);
     text-align: center;
     font-weight: 600;
 }

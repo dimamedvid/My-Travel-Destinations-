@@ -1,7 +1,10 @@
 import { Link } from 'react-router';
+import { useDestinations } from '../context/useDestinations.jsx';
 import './CityItem.css';
 
-export default function CityItem({ destination, onToggleVisited }) {
+export default function CityItem({ destination }) {
+  const { toggleVisited } = useDestinations();
+
   const { id, name, country, image, description, rating, visited } = destination;
 
   return (
@@ -31,7 +34,7 @@ export default function CityItem({ destination, onToggleVisited }) {
           <button
             className="city-card__button"
             type="button"
-            onClick={() => onToggleVisited(id)}
+            onClick={() => toggleVisited(id)}
           >
             {visited ? 'Mark as Planned' : 'Mark as Visited'}
           </button>

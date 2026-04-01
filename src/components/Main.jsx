@@ -2,26 +2,23 @@ import CitySearch from './CitySearch.jsx';
 import DestinationForm from './DestinationForm.jsx';
 import CityList from './CityList.jsx';
 import TravelersList from './TravelersList.jsx';
+import { useDestinations } from '../context/useDestinations.jsx';
 import './Main.css';
 
-export default function Main({
-  destinations,
-  filter,
-  onFilterChange,
-  onToggleVisited,
-  onAddDestination,
-}) {
+export default function Main() {
+  const { filter, setFilter } = useDestinations();
+
   return (
     <main className="main">
       <section className="panel">
         <CitySearch />
-        <DestinationForm onAddDestination={onAddDestination} />
+        <DestinationForm />
 
         <div className="filter-bar">
           <button
             className={`filter-bar__button ${filter === 'all' ? 'filter-bar__button--active' : ''}`}
             type="button"
-            onClick={() => onFilterChange('all')}
+            onClick={() => setFilter('all')}
           >
             All
           </button>
@@ -29,7 +26,7 @@ export default function Main({
           <button
             className={`filter-bar__button ${filter === 'planned' ? 'filter-bar__button--active' : ''}`}
             type="button"
-            onClick={() => onFilterChange('planned')}
+            onClick={() => setFilter('planned')}
           >
             Planned
           </button>
@@ -37,17 +34,13 @@ export default function Main({
           <button
             className={`filter-bar__button ${filter === 'visited' ? 'filter-bar__button--active' : ''}`}
             type="button"
-            onClick={() => onFilterChange('visited')}
+            onClick={() => setFilter('visited')}
           >
             Visited
           </button>
         </div>
 
-        <CityList
-          destinations={destinations}
-          onToggleVisited={onToggleVisited}
-        />
-
+        <CityList />
         <TravelersList />
       </section>
     </main>

@@ -1,10 +1,10 @@
 .footer {
-    background: #f8fafc;
+    background: var(--footer-bg);
     padding: 14px 20px;
-    border-top: 1px solid rgba(2, 8, 23, 0.06);
+    border-top: 1px solid var(--panel-border);
     display: flex;
     justify-content: center;
-    color: #64748b;
+    color: var(--text-soft);
 }
 
 .footer small {

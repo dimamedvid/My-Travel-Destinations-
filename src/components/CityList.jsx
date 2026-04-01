@@ -1,7 +1,10 @@
 import CityItem from './CityItem.jsx';
+import { useDestinations } from '../context/useDestinations.jsx';
 import './CityList.css';
 
-export default function CityList({ destinations, onToggleVisited }) {
+export default function CityList() {
+  const { filteredDestinations } = useDestinations();
+
   return (
     <section className="city-list-section">
       <div className="city-list-section__heading">
@@ -11,17 +14,16 @@ export default function CityList({ destinations, onToggleVisited }) {
         </p>
       </div>
 
-      {destinations.length === 0 ? (
+      {filteredDestinations.length === 0 ? (
         <p className="city-list-section__empty">
           No destinations found for this filter.
         </p>
       ) : (
         <div className="city-list">
-          {destinations.map((destination) => (
+          {filteredDestinations.map((destination) => (
             <CityItem
               key={destination.id}
               destination={destination}
-              onToggleVisited={onToggleVisited}
             />
           ))}
         </div>

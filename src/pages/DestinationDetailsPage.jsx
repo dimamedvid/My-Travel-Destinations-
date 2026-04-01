@@ -1,8 +1,10 @@
 import { Link, useParams } from 'react-router';
+import { useDestinations } from '../context/useDestinations.jsx';
 import './Pages.css';
 
-export default function DestinationDetailsPage({ destinations }) {
+export default function DestinationDetailsPage() {
   const { id } = useParams();
+  const { destinations } = useDestinations();
 
   const destination = destinations.find((item) => String(item.id) === id);
 

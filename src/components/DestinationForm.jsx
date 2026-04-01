@@ -1,7 +1,10 @@
 import { useState } from 'react';
+import { useDestinations } from '../context/useDestinations.jsx';
 import './DestinationForm.css';
 
-export default function DestinationForm({ onAddDestination }) {
+export default function DestinationForm() {
+  const { addDestination } = useDestinations();
+
   const [name, setName] = useState('');
   const [country, setCountry] = useState('');
 
@@ -22,7 +25,7 @@ export default function DestinationForm({ onAddDestination }) {
       visited: false,
     };
 
-    onAddDestination(newDestination);
+    addDestination(newDestination);
 
     setName('');
     setCountry('');
